@@ -1,0 +1,1399 @@
+﻿﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+<script type="text/javascript" src="/js/calendar.js"></script>
+<script type="text/javascript" src="/js/jquery-1.2.3.min.js"></script>
+<script type="text/javascript" src="/js/affichage.js"></script>
+</head>
+<body class="index">
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-11786275-19']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+	﻿<!--debut du bloc de navigation inter-site IRHT -->
+<div id="navigation-sites">
+	<ul>
+		<li><a href="http://www.irht.cnrs.fr/">Site IRHT</a></li>
+		<li><a href="http://aedilis.irht.cnrs.fr/">Ædilis</a></li>
+
+		<li><a href="http://halshs.archives-ouvertes.fr/IRHT">Archives ouvertes</a></li>
+		<li><a href="http://www.cn-telma.fr">Telma</a></li>
+		<li><a href="http://www.irht.cnrs.fr/irht.rss">S’abonner (RSS)</a></li>
+		<li>
+		<form action="" >
+			<fieldset>
+				<select name="listebases" id="listebases">
+					<option value="" selected="selected">Bases de données</option>
+					<optgroup label="Bases scientifiques">
+					<option id="pinakes" value="http://jonas.irht.cnrs.fr" title="Jonas">Jonas</option>
+					<option id="pinakes" value="http://pinakes.irht.cnrs.fr" title="Pinakes">Pinakes</option>
+					<option  id="bude" value="http://bude.irht.cnrs.fr" title="Budé">Budé</option>
+					<option  id="liturgie" value="http://www.cn-telma.fr/liturgie/" title="Catalogue de manuscrits liturgiques">Manuscrits liturgiques</option>
+					<option id="cartulaires" value="http://www.cn-telma.fr/cartulR/">Cartulaires</option>
+					</optgroup>
+					<optgroup label="manuscrits en ligne">
+					<option value="http://www.enluminures.culture.fr" title="enluminures">Enluminures</option>
+					<option value="http://liberfloridus.cines.fr" title="Liber Floridus">Liber Floridus</option>
+					</optgroup>
+					<optgroup label="bases documentaires">
+					<option value="http://medium.irht.cnrs.fr/" title="medium">Medium : microfilms et reproductions</option>
+					<option value="http://bibliotheque.irht.cnrs.fr/" title="catalogue bibliothèque">Bibliothèque</option>
+					</optgroup>
+					<optgroup label="outils">
+					<option value="http://calendriers.irht.cnrs.fr" title="Calendoscope">Calendoscope</option>
+					<option value="http://vocabulaire.irht.cnrs.fr" title="Vocabulaire codicologoqie">Vocabulaire codicologique</option>
+					<option value="http://millesimo.irht.cnrs.fr" title="Millesimo">Millesimo</option>
+					<option value="http://aedilis.irht.cnrs.fr/onomasticon" title="Onomasticon arabicum">Onomasticon arabicum</option>
+					<option value="http://aedilis.irht.cnrs.fr/cmdf/" title="Indes CMD-F">Index manuscrits datés</option>
+					</optgroup>
+				</select>
+			</fieldset>
+		</form>
+		</li>
+	</ul>
+</div>
+<!--FIN du DIV de navigation inter-sites navigation-sites -->
+
+	<div id="page">
+		<div id="bandeau">
+	<div id="identite-irht">
+			<a href="http://www.irht.cnrs.fr/"><img src="/images/logo-irht.png" />			</a>
+	</div>
+	<div id="titre-site"  style="height:50px;margin-left:100px">
+		<a href="/accueil"><span>Calendoscope</span>
+		</a>
+	</div>
+
+		<!--debut du menu  rubriques -->
+
+			
+			<ul id="rubriques">
+				<li class = lien><a href="/accueil"><span>Accueil</span></a></li>
+				
+				<li class = lien><a href="/application"><span>Calendoscope</span></a></li>
+				
+				<li class = lien  ><a href="/codicum"><span>Index Codicum</span></a></li>
+				
+				<li class = encours ><a href="/sanctorum"><span>Index Sanctorum</span></a></li>
+				
+				<li class = lien><a href="/aide"><span>Aide</span></a></li>
+		<li class = lien><a href="/colophon"><span>Colophon</span></a></li>
+			</ul>
+
+	<!-- FIN du DIV de menu : rubriques -->
+	
+			<!--a onclick= "window.open('',	'Aide Calendoscope', 'width=600,height=600,toolbar=no, location=no,directories=no,menubar=no');"><span>Accueil</span></a--></div>
+		<!--debut du contenu proprement  contenu -->
+		<div id="contenu">
+			﻿<div id="partGauche">
+	<table id="choixCorpus">
+		<tr><td>Corpus Actif</td>
+			<td>
+				<select id="corpus" onchange='reloading("/application/changeCorp","/sanctorum");' name="changeCorpus"> 
+					<option 
+						 value="cchp">Bollandistes (CCHP)
+					</option>
+					<option
+						 value="zrma">Grotefend
+					</option>
+				</select>
+			</td>
+		</tr>
+	</table>			 
+</div>
+
+
+
+	<div id="partCentre">
+	
+		<div id="titreAppli">Index Sanctorum  M</div><br/>
+		<div id="separateurTitre"></div>
+		<br/>
+		
+		<div style="text-align : center;">
+			<a href="@sanctorum?lettre=A" class="letter">A</a> | 			<a href="@sanctorum?lettre=B" class="letter">B</a> | 			<a href="@sanctorum?lettre=C" class="letter">C</a> | 			<a href="@sanctorum?lettre=D" class="letter">D</a> | 			<a href="@sanctorum?lettre=E" class="letter">E</a> | 			<a href="@sanctorum?lettre=F" class="letter">F</a> | 			<a href="@sanctorum?lettre=G" class="letter">G</a> | 			<a href="@sanctorum?lettre=H" class="letter">H</a> | 			<a href="@sanctorum?lettre=I" class="letter">I</a> | 			<a href="@sanctorum?lettre=J" class="letter">J</a> | 			<a href="@sanctorum?lettre=K" class="letter">K</a> | 			<a href="@sanctorum?lettre=L" class="letter">L</a> | 			 <a href="@sanctorum?lettre=M" id="selectedLetter" class="letter">M</a> | 			<a href="@sanctorum?lettre=N" class="letter">N</a> | 			<a href="@sanctorum?lettre=O" class="letter">O</a> | 			<a href="@sanctorum?lettre=P" class="letter">P</a> | 			<a href="@sanctorum?lettre=Q" class="letter">Q</a> | 			<a href="@sanctorum?lettre=R" class="letter">R</a> | 			<a href="@sanctorum?lettre=S" class="letter">S</a> | 			<a href="@sanctorum?lettre=T" class="letter">T</a> | 			<a href="@sanctorum?lettre=U" class="letter">U</a> | 			<a href="@sanctorum?lettre=V" class="letter">V</a> | 			<a href="@sanctorum?lettre=W" class="letter">W</a> | 			<a href="@sanctorum?lettre=X" class="letter">X</a> | 			<a href="@sanctorum?lettre=Y" class="letter">Y</a> | 			<a href="@sanctorum?lettre=Z" class="letter">Z</a> 		</div>
+	<br/>
+	
+					<table id="tab_sancto">
+				<tr>
+				<!--	<th scope="col">Identifiant</th> -->
+					<th scope="col">Libellé</th>
+					<th scope="col">Dates de fête</th>
+				</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Macchabaei mm.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/01/mois/08/saint/285');">01/Août.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Macedonius pb. m. Nicomed.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/13/mois/03/saint/1376');">13/Mars.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Macharii abb.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/09/mois/05/saint/2979');">09/Mai.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Macharii ep.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/28/mois/02/saint/2957');">28/Fev.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Macharius ab.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/12/mois/08/saint/908');">12/Août.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/23/mois/01/saint/908');">23/Jan.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Macharius ab. Alexand.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/02/mois/01/saint/482');">02/Jan.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Machutus [Maclovius] ep. in Armor.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/15/mois/11/saint/647');">15/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Machutus [Maclovius] ep. in Armor. (Tr.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/10/mois/07/saint/2459');">10/Jul.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Magnerici ep. Trever.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/25/mois/07/saint/4060');">25/Jul.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Magnus ep. m. in Ital.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/18/mois/08/saint/837');">18/Août.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Magnus ep. m. [Forosempr.?]</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/04/mois/02/saint/1058');">04/Fev.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/03/mois/02/saint/1058');">03/Fev.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maianus ep. in Vascon.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/01/mois/06/saint/1807');">01/Jun.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maiolus mm. in Afr.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/19/mois/02/saint/1068');">19/Fev.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Malulfus ep. Silvanect.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/04/mois/05/saint/2031');">04/Mai.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mamertus ep. Vienn.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/11/mois/05/saint/520');">11/Mai.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/10/mois/05/saint/520');">10/Mai.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/14/mois/05/saint/520');">14/Mai.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mammes (Ded. eccl.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/26/mois/08/saint/1766');">26/Août.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mammes m. Caesar.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/17/mois/08/saint/919');">17/Août.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/21/mois/08/saint/919');">21/Août.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mansius m. in Lusitan.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/20/mois/05/saint/1610');">20/Mai.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mansuetus</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/30/mois/12/saint/2413');">30/Dec.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mansuetus cff.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/08/mois/10/saint/1519');">08/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mansuetus ep. Tull.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/03/mois/09/saint/1111');">03/Sept.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/06/mois/09/saint/1111');">06/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mansuetus ep. Tull. (Tr.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/13/mois/06/saint/2359');">13/Jun.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mansuetus mm. Ruthen.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/16/mois/10/saint/578');">16/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcelli pp. (Exc. capitis)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/05/mois/09/saint/3806');">05/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcellinus ep. Autissiod.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/13/mois/05/saint/2248');">13/Mai.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcellinus ep. Ebredun.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/20/mois/04/saint/787');">20/Avril.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/21/mois/04/saint/787');">21/Avril.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcellinus ep. Ebredun. (Oct.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/27/mois/04/saint/1199');">27/Avril.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcellinus pb.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/02/mois/06/saint/202');">02/Jun.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcellinus pp.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/26/mois/04/saint/138');">26/Avril.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcellus</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/06/mois/10/saint/1192');">06/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcellus centurio m.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/30/mois/10/saint/589');">30/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcellus ep. Anic.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/11/mois/09/saint/1023');">11/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcellus ep. Paris (Oct.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/08/mois/11/saint/1873');">08/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcellus ep. Paris.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/03/mois/11/saint/1306');">03/Nov.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/26/mois/11/saint/1306');">26/Nov.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/07/mois/11/saint/1306');">07/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcellus ep. Paris. (Tr.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/26/mois/07/saint/1839');">26/Jul.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcellus m. Cabilon.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/04/mois/09/saint/332');">04/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcellus pp.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/01/mois/11/saint/15');">01/Nov.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/16/mois/01/saint/15');">16/Jan.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcellus pp. (Tr.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/06/mois/01/saint/745');">06/Jan.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marciana v. Albig.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/02/mois/11/saint/592');">02/Nov.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/05/mois/11/saint/592');">05/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcianus m. in Aeg.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/05/mois/06/saint/207');">05/Jun.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcianus mm. Campan.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/17/mois/06/saint/811');">17/Jun.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcianus mm. Nicomedia</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/26/mois/10/saint/874');">26/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcus</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/03/mois/10/saint/227');">03/Oct.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/18/mois/06/saint/227');">18/Jun.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/04/mois/10/saint/227');">04/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcus ev.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/25/mois/04/saint/139');">25/Avril.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcus pb. m. Rom.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/21/mois/06/saint/1906');">21/Jun.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marcus pp.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/07/mois/10/saint/382');">07/Oct.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/18/mois/05/saint/382');">18/Mai.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Margareta v. m. Antioch.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/12/mois/07/saint/265');">12/Jul.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/20/mois/07/saint/265');">20/Jul.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/13/mois/07/saint/265');">13/Jul.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Margareta [reg. Scot.?]</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/14/mois/06/saint/2256');">14/Jun.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Margarite v. m.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/15/mois/07/saint/2690');">15/Jul.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maria Aegypt.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/01/mois/04/saint/108');">01/Avril.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/07/mois/08/saint/108');">07/Août.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/28/mois/03/saint/108');">28/Mars.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/09/mois/04/saint/108');">09/Avril.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/02/mois/04/saint/108');">02/Avril.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maria Aegypt. (Tr.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/04/mois/08/saint/2467');">04/Août.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maria B.V. (Annuntiatio)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/25/mois/03/saint/102');">25/Mars.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maria B.V. (Assumptio)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/15/mois/08/saint/305');">15/Août.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maria B.V. (Concept.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/08/mois/12/saint/456');">08/Dec.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maria B.V. (Expect.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/18/mois/12/saint/939');">18/Dec.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maria B.V. (Nativ.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/08/mois/09/saint/336');">08/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maria B.V. (Purificatio)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/02/mois/02/saint/36');">02/Fev.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maria B.V. (Visit.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/02/mois/07/saint/245');">02/Jul.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maria Iacobi</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/26/mois/05/saint/714');">26/Mai.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/22/mois/10/saint/714');">22/Oct.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/25/mois/05/saint/714');">25/Mai.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/22/mois/05/saint/714');">22/Mai.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maria Magdal.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/22/mois/07/saint/269');">22/Jul.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maria Magdal. (Costae recept.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/14/mois/11/saint/2297');">14/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maria Magdal. (Revel.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/18/mois/04/saint/2234');">18/Avril.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maria Magdal. (Tr.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/19/mois/03/saint/674');">19/Mars.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/05/mois/05/saint/674');">05/Mai.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maria Salome (Oct.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/29/mois/10/saint/878');">29/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maria v. (Praesent.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/21/mois/11/saint/436');">21/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mariani cf.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/28/mois/10/saint/4106');">28/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marie B.V. (ad Nives)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/31/mois/08/saint/2722');">31/Août.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marie B.V. (Assumpt., oct.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/22/mois/08/saint/2753');">22/Août.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marie B.V. (Compass.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/18/mois/07/saint/3033');">18/Jul.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/19/mois/07/saint/3033');">19/Jul.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marie B.V. (Concept., oct.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/12/mois/12/saint/3738');">12/Dec.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marie B.V. (Nativ., oct.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/15/mois/09/saint/2776');">15/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marie B.V. (Purif., oct.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/09/mois/02/saint/3751');">09/Fev.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marie B.V. (Trices. [!] Assumptionis)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/23/mois/09/saint/3549');">23/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marie B.V. (Visit., oct.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/09/mois/07/saint/2683');">09/Jul.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/08/mois/07/saint/2683');">08/Jul.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marie Magdalene (Conv.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/01/mois/03/saint/2951');">01/Mars.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marii ep. Aventic.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/31/mois/12/saint/4153');">31/Dec.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marii ep. Trever.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/26/mois/01/saint/4013');">26/Jan.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marina v. Alexand.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/19/mois/06/saint/1470');">19/Jun.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marina v. in Gallaec.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/16/mois/07/saint/823');">16/Jul.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/17/mois/07/saint/823');">17/Jul.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marinus</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/03/mois/03/saint/74');">03/Mars.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marinus ab. Condat.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/03/mois/01/saint/743');">03/Jan.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marinus m.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/25/mois/01/saint/2315');">25/Jan.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marius</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/19/mois/01/saint/18');">19/Jan.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marius ab. Bodan.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/27/mois/01/saint/659');">27/Jan.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marius ep.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/14/mois/01/saint/653');">14/Jan.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martha</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/17/mois/12/saint/466');">17/Dec.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/17/mois/10/saint/466');">17/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martha hosp.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/29/mois/07/saint/281');">29/Jul.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/30/mois/07/saint/281');">30/Jul.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/27/mois/07/saint/281');">27/Jul.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/28/mois/07/saint/281');">28/Jul.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marthe hosp.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/31/mois/07/saint/2713');">31/Jul.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martiala v.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/28/mois/11/saint/938');">28/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martialis</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/20/mois/02/saint/2124');">20/Fev.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martialis ep. Lemovic.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/16/mois/06/saint/224');">16/Jun.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/03/mois/07/saint/224');">03/Jul.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/09/mois/01/saint/224');">09/Jan.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/30/mois/06/saint/224');">30/Jun.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/06/mois/07/saint/224');">06/Jul.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/07/mois/07/saint/224');">07/Jul.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martialis ep. Lemovic. (Oct.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/14/mois/07/saint/818');">14/Jul.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martialis ep. Lemovic. (Tr.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/13/mois/10/saint/929');">13/Oct.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/10/mois/10/saint/929');">10/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martialis mm. in Afr.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/28/mois/09/saint/1635');">28/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martiana mm. Interamn.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/03/mois/04/saint/112');">03/Avril.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/04/mois/04/saint/112');">04/Avril.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/05/mois/04/saint/112');">05/Avril.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martianus m. Rom.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/27/mois/03/saint/1392');">27/Mars.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martina v. m. Rom.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/01/mois/01/saint/3');">01/Jan.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martine v.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/20/mois/06/saint/3327');">20/Jun.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martini ep. Turon. (Tr. capitis)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/01/mois/12/saint/3420');">01/Dec.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martiniani m.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/11/mois/07/saint/2680');">11/Jul.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martinus ab. Vertav.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/23/mois/10/saint/1038');">23/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martinus ep. Turon.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/11/mois/11/saint/429');">11/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martinus ep. Turon. (Ord.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/04/mois/07/saint/544');">04/Jul.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/05/mois/07/saint/544');">05/Jul.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martinus ep. Turon. (Revers.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/13/mois/12/saint/1049');">13/Dec.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martinus m. Brivat.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/09/mois/08/saint/1015');">09/Août.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martinus pp. m.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/12/mois/11/saint/425');">12/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martinus [pp. ?]</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/16/mois/09/saint/1507');">16/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Marturius</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/13/mois/08/saint/1679');">13/Août.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martyres LXX Sicil.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/21/mois/02/saint/1354');">21/Fev.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martyres Thebaei (Commem.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/24/mois/11/saint/1556');">24/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martyres XL Sebast.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/10/mois/03/saint/84');">10/Mars.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/11/mois/03/saint/84');">11/Mars.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/08/mois/03/saint/84');">08/Mars.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/09/mois/03/saint/84');">09/Mars.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martyres XLVII Rom.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/14/mois/03/saint/1236');">14/Mars.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martyrum CM Rom.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/04/mois/03/saint/3956');">04/Mars.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martyrum XVII</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/16/mois/04/saint/3296');">16/Avril.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Martyrum XX Tarsi</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/06/mois/06/saint/3318');">06/Jun.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Masona mm. Emerit.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/11/mois/12/saint/1646');">11/Dec.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mastidia v. Trec.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/07/mois/05/saint/2244');">07/Mai.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Materni ep. Trever.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/14/mois/09/saint/3226');">14/Sept.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/19/mois/09/saint/3226');">19/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maternus ep. Colon.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/13/mois/09/saint/852');">13/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mathias ap.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/07/mois/02/saint/61');">07/Fev.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/24/mois/02/saint/61');">24/Fev.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mathurinus cf.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/09/mois/11/saint/1083');">09/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Matrona v. m. Barcin.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/15/mois/03/saint/1890');">15/Mars.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Matthaeus ap.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/21/mois/09/saint/358');">21/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Matthaeus ep. Hierosol.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/30/mois/01/saint/1182');">30/Jan.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Matthei abb.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/22/mois/03/saint/2582');">22/Mars.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Matthie ap. (Inv.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/01/mois/09/saint/4068');">01/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Matthie ap. (Tr. Mediol.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/08/mois/02/saint/3875');">08/Fev.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Matthie ap. (Tr.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/11/mois/08/saint/3628');">11/Août.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Matthie, Rustici, Venantii (Tr.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/16/mois/11/saint/3665');">16/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maudetus ab. in Armor.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/18/mois/11/saint/1134');">18/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maura vv. mm. Raven.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/13/mois/02/saint/1234');">13/Fev.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mauri CCC m. Colon. (Tr.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/25/mois/06/saint/1462');">25/Jun.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maurilius ep. Andegav. (Tr.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/16/mois/08/saint/2416');">16/Août.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/19/mois/10/saint/2416');">19/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mauritius</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/22/mois/09/saint/359');">22/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mauritius (Brachii tr.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/02/mois/12/saint/2495');">02/Dec.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maurontus ep. Massil.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/21/mois/10/saint/871');">21/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maurus</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/05/mois/10/saint/1297');">05/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maurus ab. Fossat.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/15/mois/01/saint/12');">15/Jan.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maurus ab. Fossat. (Tr.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/12/mois/03/saint/1948');">12/Mars.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maurus mm. Rom.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/29/mois/01/saint/765');">29/Jan.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/03/mois/12/saint/765');">03/Dec.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maxentie matr. s. Vigilii</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/30/mois/04/saint/2610');">30/Avril.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maxentius ab. Pictav.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/26/mois/06/saint/1092');">26/Jun.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maxima v. Foroiul.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/16/mois/05/saint/677');">16/Mai.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maximianus</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/07/mois/01/saint/609');">07/Jan.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/08/mois/01/saint/609');">08/Jan.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maximini ep.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/29/mois/04/saint/3145');">29/Avril.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maximinus ab. Aurelian.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/20/mois/08/saint/463');">20/Août.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maximinus ep. Aq.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/07/mois/06/saint/685');">07/Jun.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maximinus ep. Aq. (Tr.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/08/mois/04/saint/670');">08/Avril.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maximinus ep. Trever.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/28/mois/05/saint/530');">28/Mai.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/30/mois/05/saint/530');">30/Mai.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/10/mois/06/saint/530');">10/Jun.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/29/mois/05/saint/530');">29/Mai.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maximus</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/15/mois/04/saint/613');">15/Avril.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/02/mois/10/saint/613');">02/Oct.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/13/mois/04/saint/613');">13/Avril.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/18/mois/02/saint/613');">18/Fev.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maximus ep. Reg.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/27/mois/11/saint/445');">27/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maximus ep. Reg. (Relat.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/04/mois/12/saint/2111');">04/Dec.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maximus ep. Trever. (Inv.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/12/mois/09/saint/1506');">12/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maximus etc. mm. Ost.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/23/mois/08/saint/840');">23/Août.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maximus m. Aquil.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/20/mois/10/saint/398');">20/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maximus mm. Rom.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/14/mois/04/saint/127');">14/Avril.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Maximus pb. Rom.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/19/mois/11/saint/1797');">19/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Medardus ep. Noviom.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/08/mois/06/saint/212');">08/Jun.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/01/mois/10/saint/212');">01/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Medardus ep. Noviom. (Revel.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/09/mois/09/saint/1771');">09/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Medericus ab. Paris.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/29/mois/08/saint/1849');">29/Août.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Medrisma v. Suession.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/22/mois/11/saint/2109');">22/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Meginradi erem. m.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/21/mois/01/saint/3491');">21/Jan.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Melanius ep. Redon.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/04/mois/01/saint/1124');">04/Jan.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/11/mois/10/saint/1124');">11/Oct.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/06/mois/11/saint/1124');">06/Nov.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/12/mois/10/saint/1124');">12/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Melchiades pp.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/10/mois/12/saint/458');">10/Dec.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Meleusippus mm.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/17/mois/01/saint/489');">17/Jan.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Meleusippus mm. (Inv.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/18/mois/09/saint/1776');">18/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mellitus ep. Londin.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/24/mois/04/saint/2336');">24/Avril.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Melorus ep. in Armor.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/06/mois/05/saint/1977');">06/Mai.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Memmius ep. Catalaun.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/05/mois/08/saint/1157');">05/Août.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Memmius ep. Catalaun. (Tr.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/20/mois/12/saint/2115');">20/Dec.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/16/mois/12/saint/2115');">16/Dec.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Memorius</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/07/mois/09/saint/2237');">07/Sept.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/02/mois/05/saint/2237');">02/Mai.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mendrias</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/19/mois/08/saint/838');">19/Août.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mercurius m. Caesar.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/25/mois/11/saint/1558');">25/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Metrannus m. Alexand.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/31/mois/01/saint/1337');">31/Jan.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Metropia v. m. Perus.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/01/mois/05/saint/513');">01/Mai.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mevennus ab. in Armor.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/22/mois/06/saint/2451');">22/Jun.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Michael (Appar.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/15/mois/10/saint/1864');">15/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Michael archang. (Appar. in M. Tumba)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/08/mois/05/saint/161');">08/Mai.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Michael archang. (Dedic. eccl.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/29/mois/09/saint/370');">29/Sept.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Milburge v.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/23/mois/02/saint/3752');">23/Fev.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Militum X mil. [Achatius etc.] m.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/23/mois/06/saint/2667');">23/Jun.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Miniatus m. Florent.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/25/mois/10/saint/1303');">25/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mitrius m. Aq.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/13/mois/11/saint/724');">13/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mitrius m. Aq. (Oct.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/20/mois/11/saint/735');">20/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mitrius m. Aq. (Tr.)</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/24/mois/10/saint/719');">24/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Moderannus ep. Redon.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/15/mois/05/saint/1900');">15/Mai.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Modeste v. Trever.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/04/mois/11/saint/3409');">04/Nov.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Modestus</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/10/mois/11/saint/220');">10/Nov.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/15/mois/06/saint/220');">15/Jun.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Monegundis v.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/01/mois/07/saint/3335');">01/Jul.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Monica vid. [m. Augustini] [Tr.]</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/11/mois/04/saint/119');">11/Avril.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Monice vid. matr. s. Augustini</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/26/mois/02/saint/3687');">26/Fev.									</a>
+									 - 	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/25/mois/02/saint/3687');">25/Fev.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mononis erem. m.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/18/mois/10/saint/3398');">18/Oct.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Montanus pb. m. Sirm.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/26/mois/03/saint/2330');">26/Mars.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Morandus mon. Cluniac.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/03/mois/06/saint/805');">03/Jun.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Moyses [anach. in Syria?]</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/27/mois/02/saint/65');">27/Fev.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mummolus m. Burdegal.</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/08/mois/08/saint/1104');">08/Août.									</a>
+																	</td>			
+					</tr>
+									<tr >
+					<!--	<td></td> -->
+						<td>Mutius</td> 
+						<td>	 <a class="choixDate" onclick="window.location.replace('/application/positifDate/jour/15/mois/12/saint/903');">15/Dec.									</a>
+																	</td>			
+					</tr>
+							</table> 
+			</div>
+		</div>
+		<!--FIN du DIV conteneur de page -->
+	</div>
+			<div id="footer">
+        
+       	<p>© 2013
+    		<a href="http://www.irht.cnrs.fr/">
+            Institut de recherche et d’histoire des textes</a>
+    	</p>
+		<div class="centre">
+			<ul>
+				<li><a id="back" href="javascript:history.go(-1);">Retour précédente</a></li>
+            	<li><a id="top" href="#page">Haut de page	</a></li>
+			</ul>
+        </div>
+    </div>
+</body>
+</html>
